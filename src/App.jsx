@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/widget" element={<ChatWidgetPage />} />
+        <Route path="/" element={<ChatWidgetPage />} />
         {/* other routes */}
       </Routes>
     </Router>
