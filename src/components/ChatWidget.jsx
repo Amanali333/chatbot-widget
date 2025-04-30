@@ -37,11 +37,13 @@ const ChatWidget = () => {
   };
 
   return (
-    <>
+    <div style={{ width: '100%', height: '100%' }}>
+      {/* Floating Icon */}
       <div onClick={toggleChat} style={iconStyle}>
         💬
       </div>
 
+      {/* Show only when open */}
       {open && (
         <div style={chatBoxStyle}>
           <iframe
@@ -49,10 +51,11 @@ const ChatWidget = () => {
             width="100%"
             height="100%"
             style={{ border: 'none' }}
+            title="Chat UI"
           />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
