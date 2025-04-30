@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ChatWidget = () => {
   const [open, setOpen] = useState(false);
@@ -6,23 +6,12 @@ const ChatWidget = () => {
   const toggleChat = () => setOpen(!open);
 
   return (
-    <div
-      style={{
-        pointerEvents: open ? "auto" : "none", // ✅ lets clicks through when closed
-        position: "fixed",
-        bottom: 0,
-        right: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: 9999,
-      }}
-    >
+    <div style={{ width: "100%", height: "100%" }}>
       {/* Floating Icon */}
       <div
         onClick={toggleChat}
         style={{
-          pointerEvents: "auto", // ✅ icon must stay clickable
-          position: 'absolute',
+          position: 'fixed',
           bottom: '20px',
           right: '20px',
           width: '60px',
@@ -41,18 +30,18 @@ const ChatWidget = () => {
         💬
       </div>
 
-      {/* Chat container (only if open) */}
+      {/* Chat Container */}
       {open && (
         <div
           style={{
-            position: 'absolute',
+            position: 'fixed',
             bottom: '90px',
             right: '20px',
             width: '350px',
             height: '500px',
-            border: '1px solid #ccc',
-            borderRadius: '10px',
             backgroundColor: 'white',
+            borderRadius: '10px',
+            boxShadow: '0 0 10px rgba(0,0,0,0.2)',
             zIndex: 9998,
             overflow: 'hidden',
           }}
@@ -62,7 +51,7 @@ const ChatWidget = () => {
             width="100%"
             height="100%"
             style={{ border: 'none' }}
-            title="Chat"
+            title="Chat UI"
           />
         </div>
       )}
