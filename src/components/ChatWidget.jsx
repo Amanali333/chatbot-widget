@@ -1,60 +1,59 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const ChatWidget = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const toggleWidget = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleChat = () => setOpen(!open);
 
   return (
     <div>
-      {/* Floating Button */}
+      {/* Floating Icon */}
       <div
-        onClick={toggleWidget}
+        onClick={toggleChat}
         style={{
-          position: "fixed",
-          bottom: "20px",
-          right: "20px",
-          width: "60px",
-          height: "60px",
-          backgroundColor: "#007bff",
-          borderRadius: "50%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          color: "white",
-          fontSize: "30px",
-          cursor: "pointer",
-          zIndex: 1000,
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          backgroundColor: '#007bff',
+          color: '#fff',
+          fontSize: '28px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          cursor: 'pointer',
+          zIndex: 9999,
         }}
       >
         💬
       </div>
 
-      {/* Chat Container */}
-      {isOpen && (
+      {/* Chat container */}
+      {open && (
         <div
           style={{
-            position: "fixed",
-            bottom: "90px",
-            right: "20px",
-            width: "350px",
-            height: "500px",
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            boxShadow: "0 0 10px rgba(0,0,0,0.3)",
-            overflow: "hidden",
-            backgroundColor: "white",
-            zIndex: 999,
+            position: 'fixed',
+            bottom: '90px',
+            right: '20px',
+            width: '350px',
+            height: '500px',
+            border: '1px solid #ccc',
+            borderRadius: '10px',
+            boxShadow: '0 0 10px rgba(0,0,0,0.3)',
+            backgroundColor: 'white',
+            zIndex: 9998,
+            overflow: 'hidden',
           }}
         >
+          {/* 👉 This must be your real chatbot, not the widget page */}
           <iframe
-            src="https://example.com/chatbot" // replace with your actual bot URL
-            title="Chat Bot"
+            src="https://your-chatbot-ui-or-service-url.com"
+            title="Chatbot"
             width="100%"
             height="100%"
-            style={{ border: "none" }}
+            style={{ border: 'none' }}
           />
         </div>
       )}
