@@ -27,7 +27,7 @@
             zIndex: 9999,
           }}
         >
-          💬
+          💬 
         </div>
 
         {/* Chat container */}
